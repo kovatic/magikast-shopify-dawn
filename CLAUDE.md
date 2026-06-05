@@ -1,0 +1,1 @@
+/Users/santhoshraja/Santhosh/Web Application/magickast/AGENTS.md
