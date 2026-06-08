@@ -3649,7 +3649,7 @@ details[open]:hover > .header__menu-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 1rem;
   padding: 0.8rem 0 1rem;
   min-height: 3.6rem;
 }
@@ -3657,11 +3657,13 @@ details[open]:hover > .header__menu-item {
 .announcement-bar__icon-wrap {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
+.announcement-bar__icon-wrap svg,
 .announcement-bar__icon-wrap .icon-truck {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2rem;
+  height: 2rem;
   fill: currentColor;
 }
 
