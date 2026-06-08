@@ -19,7 +19,7 @@
 {% endif %}
 
 <div
-  class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
+  class="utility-bar utility-bar--puddle color-{{ section.settings.color_scheme }} gradient{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
 >
   <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
     {%- if section.settings.show_social and social_icons -%}
@@ -40,6 +40,7 @@
             >
           {%- endif -%}
           <p class="announcement-bar__message h5">
+            <span class="announcement-bar__icon-wrap">{{- 'icon-truck.svg' | inline_asset_content -}}</span>
             <span>{{ section.blocks.first.settings.text | escape }}</span>
             {%- if section.blocks.first.settings.link != blank -%}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
@@ -100,6 +101,7 @@
                       >
                     {%- endif -%}
                     <p class="announcement-bar__message h5">
+                      <span class="announcement-bar__icon-wrap">{{- 'icon-truck.svg' | inline_asset_content -}}</span>
                       <span>{{ block.settings.text | escape }}</span>
                       {%- if block.settings.link != blank -%}
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
@@ -136,6 +138,11 @@
         </style>
       {%- endif -%}
     {%- endif -%}
+    <div class="announcement-bar__wave" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 28" preserveAspectRatio="none">
+        <path class="announcement-bar__wave-path" d="M0,14 C60,28 120,0 180,14 C240,28 300,0 360,14 C420,28 480,0 540,14 C600,28 660,0 720,14 C780,28 840,0 900,14 C960,28 1020,0 1080,14 C1140,28 1200,0 1260,14 C1320,28 1380,0 1440,14 L1440,28 L0,28 Z"/>
+      </svg>
+    </div>
     <div class="localization-wrapper">
       {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
         <localization-form class="small-hide medium-hide">

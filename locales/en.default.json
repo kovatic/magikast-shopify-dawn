@@ -327,6 +327,45 @@
       "view_all": "View all",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
+    "collection_tabs": {
+      "name": "Collection tabs",
+      "tabs_label": "Product tabs",
+      "tab_heading": "Tab {{ index }}",
+      "prev_slide": "Previous slide",
+      "next_slide": "Next slide",
+      "view_all": "View all",
+      "view_all_label": "View all products in the {{ collection_name }} collection",
+      "settings": {
+        "title": { "label": "Heading" },
+        "description": { "label": "Description" },
+        "products_to_show": { "label": "Maximum products to show" },
+        "columns_desktop": { "label": "Number of columns on desktop" },
+        "columns_mobile": { "label": "Number of columns on mobile" },
+        "image_ratio": {
+          "label": "Image ratio",
+          "options__1": { "label": "Adapt to image" },
+          "options__2": { "label": "Portrait" },
+          "options__3": { "label": "Square" }
+        },
+        "show_secondary_image": { "label": "Show second image on hover" },
+        "show_vendor": { "label": "Show vendor" },
+        "show_rating": { "label": "Show product rating" },
+        "show_view_all": { "label": "Enable \"View all\" button" }
+      },
+      "blocks": {
+        "collection_tab": {
+          "name": "Collection tab",
+          "settings": {
+            "collection": { "label": "Collection" },
+            "tab_label": {
+              "label": "Tab label",
+              "info": "Leave blank to use collection title"
+            }
+          }
+        }
+      },
+      "presets": { "name": "Collection tabs" }
+    },
     "collection_list": {
       "view_all": "View all"
     },
