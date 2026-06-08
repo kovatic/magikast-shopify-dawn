@@ -36,48 +36,15 @@
           {%- if section.blocks.first.settings.link != blank -%}
             <a
               href="{{ section.blocks.first.settings.link }}"
-              class="announcement-bar__link link link--text focus-inset"
+              class="announcement-bar__link link link--text focus-inset animate-arrow"
             >
           {%- endif -%}
           <p class="announcement-bar__message h5">
-            {%- assign icon_choice = section.blocks.first.settings.icon -%}
-            {%- if icon_choice == 'delivery' -%}
-              <span class="announcement-bar__icon-wrap">
-                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                  <path d="M9.69502 0.6786C9.91338 0.601796 10.1516 0.603123 10.3691 0.682353L18.2151 3.54058C18.61 3.68445 18.8728 4.05988 18.8728 4.48018V14.4287C18.8728 14.8074 18.6588 15.1537 18.32 15.3231L10.4731 19.2465C10.196 19.385 9.87022 19.3873 9.59117 19.2526L1.45405 15.3244C1.10843 15.1576 0.888794 14.8076 0.888794 14.4239V4.48434C0.888794 4.05997 1.15665 3.68181 1.55699 3.541L9.69502 0.6786ZM6.07999 3.01017L2.5346 4.25719L10.149 7.63545L13.5692 6.118L6.07999 3.01017ZM6.78606 2.76183L14.1997 5.83828L17.5367 4.35774L10.0268 1.62195L6.78606 2.76183ZM1.88879 14.4239L1.88879 5.06467L9.64898 8.50762V18.1701L1.88879 14.4239ZM17.8728 14.4287L10.649 18.0405V8.50762L17.8728 5.30263V14.4287Z" fill-rule="evenodd" fill="currentColor"></path>
-                </svg>
-              </span>
-            {%- elsif icon_choice == 'shipping' -%}
-              <span class="announcement-bar__icon-wrap">
-                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                  <path d="M0 3.75156C0 3.47454 0.224196 3.24997 0.500755 3.24997H10.647C10.9235 3.24997 11.1477 3.47454 11.1477 3.75156V5.07505V5.63362V6.10938V13.6616C10.9427 14.0067 10.8813 14.1101 10.5516 14.6648L7.22339 14.6646V13.6614H10.1462V4.25316H1.00151V13.6614H2.6842V14.6646H0.500755C0.224196 14.6646 0 14.44 0 14.163V3.75156Z" fill="currentColor"></path>
-                  <path d="M18.9985 8.08376L11.1477 6.10938V5.07505L19.6212 7.20603C19.8439 7.26203 20 7.46255 20 7.69253V14.1631C20 14.4401 19.7758 14.6647 19.4992 14.6647H17.3071V13.6615H18.9985V8.08376ZM11.1477 13.6616L13.3442 13.6615L13.3443 14.6647L10.5516 14.6648L11.1477 13.6616Z" fill="currentColor"></path>
-                  <path d="M7.71269 14.1854C7.71269 15.6018 6.56643 16.75 5.15245 16.75C3.73847 16.75 2.59221 15.6018 2.59221 14.1854C2.59221 12.7691 3.73847 11.6209 5.15245 11.6209C6.56643 11.6209 7.71269 12.7691 7.71269 14.1854ZM5.15245 15.7468C6.01331 15.7468 6.71118 15.0478 6.71118 14.1854C6.71118 13.3231 6.01331 12.6241 5.15245 12.6241C4.29159 12.6241 3.59372 13.3231 3.59372 14.1854C3.59372 15.0478 4.29159 15.7468 5.15245 15.7468Z" fill="currentColor"></path>
-                  <path d="M17.5196 14.1854C17.5196 15.6018 16.3733 16.75 14.9593 16.75C13.5454 16.75 12.3991 15.6018 12.3991 14.1854C12.3991 12.7691 13.5454 11.6209 14.9593 11.6209C16.3733 11.6209 17.5196 12.7691 17.5196 14.1854ZM14.9593 15.7468C15.8202 15.7468 16.5181 15.0478 16.5181 14.1854C16.5181 13.3231 15.8202 12.6241 14.9593 12.6241C14.0985 12.6241 13.4006 13.3231 13.4006 14.1854C13.4006 15.0478 14.0985 15.7468 14.9593 15.7468Z" fill="currentColor"></path>
-                </svg>
-              </span>
-            {%- elsif icon_choice == 'truck' -%}
-              <span class="announcement-bar__icon-wrap">{{- 'icon-truck.svg' | inline_asset_content -}}</span>
-            {%- elsif icon_choice == 'star' -%}
-              <span class="announcement-bar__icon-wrap">
-                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 1l2.47 5.01L18 6.91l-4 3.9.94 5.5L10 13.77l-4.94 2.54L6 10.81 2 6.91l5.53-.9L10 1z"/>
-                </svg>
-              </span>
-            {%- elsif icon_choice == 'tag' -%}
-              <span class="announcement-bar__icon-wrap">
-                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M17.5 2.5h-6.17a1 1 0 00-.7.29L2.79 10.63a1 1 0 000 1.41l5.17 5.17a1 1 0 001.41 0l7.84-7.84a1 1 0 00.29-.7V3.5a1 1 0 00-1-1zM14 7a1 1 0 110-2 1 1 0 010 2z"/>
-                </svg>
-              </span>
-            {%- elsif icon_choice == 'gift' -%}
-              <span class="announcement-bar__icon-wrap">
-                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 3.5c0-1.38-1.12-2.5-2.5-2.5a2.5 2.5 0 00-1 4.79V5.5H3a1 1 0 00-1 1V9a1 1 0 001 1h1v7a1 1 0 001 1h10a1 1 0 001-1v-7h1a1 1 0 001-1V6.5a1 1 0 00-1-1h-3.5v-.71A2.5 2.5 0 0010 1a2.5 2.5 0 00-2.5 2.5H10zM7.5 3a1 1 0 011 1v1.5H7.5V4a1 1 0 010-2zm5 0a1 1 0 011 1v.5H12V4a1 1 0 011-1z"/>
-                </svg>
-              </span>
-            {%- endif -%}
+            <span class="announcement-bar__icon-wrap">{{- 'icon-truck.svg' | inline_asset_content -}}</span>
             <span>{{ section.blocks.first.settings.text | escape }}</span>
+            {%- if section.blocks.first.settings.link != blank -%}
+              {{- 'icon-arrow.svg' | inline_asset_content -}}
+            {%- endif -%}
           </p>
           {%- if section.blocks.first.settings.link != blank -%}
             </a>
@@ -130,48 +97,15 @@
                     {%- if block.settings.link != blank -%}
                       <a
                         href="{{ block.settings.link }}"
-                        class="announcement-bar__link link link--text focus-inset"
+                        class="announcement-bar__link link link--text focus-inset animate-arrow"
                       >
                     {%- endif -%}
                     <p class="announcement-bar__message h5">
-                      {%- assign icon_choice = block.settings.icon -%}
-                      {%- if icon_choice == 'delivery' -%}
-                        <span class="announcement-bar__icon-wrap">
-                          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                            <path d="M9.69502 0.6786C9.91338 0.601796 10.1516 0.603123 10.3691 0.682353L18.2151 3.54058C18.61 3.68445 18.8728 4.05988 18.8728 4.48018V14.4287C18.8728 14.8074 18.6588 15.1537 18.32 15.3231L10.4731 19.2465C10.196 19.385 9.87022 19.3873 9.59117 19.2526L1.45405 15.3244C1.10843 15.1576 0.888794 14.8076 0.888794 14.4239V4.48434C0.888794 4.05997 1.15665 3.68181 1.55699 3.541L9.69502 0.6786ZM6.07999 3.01017L2.5346 4.25719L10.149 7.63545L13.5692 6.118L6.07999 3.01017ZM6.78606 2.76183L14.1997 5.83828L17.5367 4.35774L10.0268 1.62195L6.78606 2.76183ZM1.88879 14.4239L1.88879 5.06467L9.64898 8.50762V18.1701L1.88879 14.4239ZM17.8728 14.4287L10.649 18.0405V8.50762L17.8728 5.30263V14.4287Z" fill-rule="evenodd" fill="currentColor"></path>
-                          </svg>
-                        </span>
-                      {%- elsif icon_choice == 'shipping' -%}
-                        <span class="announcement-bar__icon-wrap">
-                          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                            <path d="M0 3.75156C0 3.47454 0.224196 3.24997 0.500755 3.24997H10.647C10.9235 3.24997 11.1477 3.47454 11.1477 3.75156V5.07505V5.63362V6.10938V13.6616C10.9427 14.0067 10.8813 14.1101 10.5516 14.6648L7.22339 14.6646V13.6614H10.1462V4.25316H1.00151V13.6614H2.6842V14.6646H0.500755C0.224196 14.6646 0 14.44 0 14.163V3.75156Z" fill="currentColor"></path>
-                            <path d="M18.9985 8.08376L11.1477 6.10938V5.07505L19.6212 7.20603C19.8439 7.26203 20 7.46255 20 7.69253V14.1631C20 14.4401 19.7758 14.6647 19.4992 14.6647H17.3071V13.6615H18.9985V8.08376ZM11.1477 13.6616L13.3442 13.6615L13.3443 14.6647L10.5516 14.6648L11.1477 13.6616Z" fill="currentColor"></path>
-                            <path d="M7.71269 14.1854C7.71269 15.6018 6.56643 16.75 5.15245 16.75C3.73847 16.75 2.59221 15.6018 2.59221 14.1854C2.59221 12.7691 3.73847 11.6209 5.15245 11.6209C6.56643 11.6209 7.71269 12.7691 7.71269 14.1854ZM5.15245 15.7468C6.01331 15.7468 6.71118 15.0478 6.71118 14.1854C6.71118 13.3231 6.01331 12.6241 5.15245 12.6241C4.29159 12.6241 3.59372 13.3231 3.59372 14.1854C3.59372 15.0478 4.29159 15.7468 5.15245 15.7468Z" fill="currentColor"></path>
-                            <path d="M17.5196 14.1854C17.5196 15.6018 16.3733 16.75 14.9593 16.75C13.5454 16.75 12.3991 15.6018 12.3991 14.1854C12.3991 12.7691 13.5454 11.6209 14.9593 11.6209C16.3733 11.6209 17.5196 12.7691 17.5196 14.1854ZM14.9593 15.7468C15.8202 15.7468 16.5181 15.0478 16.5181 14.1854C16.5181 13.3231 15.8202 12.6241 14.9593 12.6241C14.0985 12.6241 13.4006 13.3231 13.4006 14.1854C13.4006 15.0478 14.0985 15.7468 14.9593 15.7468Z" fill="currentColor"></path>
-                          </svg>
-                        </span>
-                      {%- elsif icon_choice == 'truck' -%}
-                        <span class="announcement-bar__icon-wrap">{{- 'icon-truck.svg' | inline_asset_content -}}</span>
-                      {%- elsif icon_choice == 'star' -%}
-                        <span class="announcement-bar__icon-wrap">
-                          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M10 1l2.47 5.01L18 6.91l-4 3.9.94 5.5L10 13.77l-4.94 2.54L6 10.81 2 6.91l5.53-.9L10 1z"/>
-                          </svg>
-                        </span>
-                      {%- elsif icon_choice == 'tag' -%}
-                        <span class="announcement-bar__icon-wrap">
-                          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M17.5 2.5h-6.17a1 1 0 00-.7.29L2.79 10.63a1 1 0 000 1.41l5.17 5.17a1 1 0 001.41 0l7.84-7.84a1 1 0 00.29-.7V3.5a1 1 0 00-1-1zM14 7a1 1 0 110-2 1 1 0 010 2z"/>
-                          </svg>
-                        </span>
-                      {%- elsif icon_choice == 'gift' -%}
-                        <span class="announcement-bar__icon-wrap">
-                          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M10 3.5c0-1.38-1.12-2.5-2.5-2.5a2.5 2.5 0 00-1 4.79V5.5H3a1 1 0 00-1 1V9a1 1 0 001 1h1v7a1 1 0 001 1h10a1 1 0 001-1v-7h1a1 1 0 001-1V6.5a1 1 0 00-1-1h-3.5v-.71A2.5 2.5 0 0010 1a2.5 2.5 0 00-2.5 2.5H10zM7.5 3a1 1 0 011 1v1.5H7.5V4a1 1 0 010-2zm5 0a1 1 0 011 1v.5H12V4a1 1 0 011-1z"/>
-                          </svg>
-                        </span>
-                      {%- endif -%}
+                      <span class="announcement-bar__icon-wrap">{{- 'icon-truck.svg' | inline_asset_content -}}</span>
                       <span>{{ block.settings.text | escape }}</span>
+                      {%- if block.settings.link != blank -%}
+                        {{- 'icon-arrow.svg' | inline_asset_content -}}
+                      {%- endif -%}
                     </p>
                     {%- if block.settings.link != blank -%}
                       </a>
@@ -259,13 +193,13 @@
       "unit": "s",
       "label": "t:sections.announcement-bar.settings.change_slides_speed.label",
       "default": 5
-    },
+    },    
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-4"
-    },
+    },  
     {
       "type": "checkbox",
       "id": "show_line_separator",
@@ -279,7 +213,7 @@
     {
       "type": "paragraph",
          "content": "t:sections.announcement-bar.settings.paragraph.content"
-    },
+    },             
     {
       "type": "checkbox",
       "id": "show_social",
@@ -307,21 +241,6 @@
       "type": "announcement",
       "name": "t:sections.announcement-bar.blocks.announcement.name",
       "settings": [
-        {
-          "type": "select",
-          "id": "icon",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.icon.label",
-          "default": "delivery",
-          "options": [
-            { "value": "none", "label": "t:sections.announcement-bar.blocks.announcement.settings.icon.options.none" },
-            { "value": "delivery", "label": "t:sections.announcement-bar.blocks.announcement.settings.icon.options.delivery" },
-            { "value": "shipping", "label": "t:sections.announcement-bar.blocks.announcement.settings.icon.options.shipping" },
-            { "value": "truck", "label": "t:sections.announcement-bar.blocks.announcement.settings.icon.options.truck" },
-            { "value": "star", "label": "t:sections.announcement-bar.blocks.announcement.settings.icon.options.star" },
-            { "value": "tag", "label": "t:sections.announcement-bar.blocks.announcement.settings.icon.options.tag" },
-            { "value": "gift", "label": "t:sections.announcement-bar.blocks.announcement.settings.icon.options.gift" }
-          ]
-        },
         {
           "type": "text",
           "id": "text",
